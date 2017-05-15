@@ -206,8 +206,8 @@ MaskApi.drawMasks = function( img, masks, maxn, alpha, clrs )
     -- softly embed masks into image and add solid boundaries
     for j=1,3 do
       local O,c,a = img[j]:data(), clrs[i][j], alpha
-      for k=0,w*h-1 do if M[k]==1 then O[k]=O[k]*(1-a)+c*a end end
-      for k=0,w*h-1 do if B[k]==1 then O[k]=c end end
+      for k=0,w*h-1 do if M[k]==1 then O[k]=c end end
+      for k=0,w*h-1 do if B[k]==1 then O[k]=0 end end
     end
   end
 end
